@@ -1,0 +1,14 @@
+page_name: Friendlier Fire
+page_description: Less stressful follower combat experience.
+
+playerToFollowers_groupName: Player -> Followers Attacks
+disableAggro_name: Disable Aggro
+hpDamageMultiplier_name: Health Damage Multiplier
+fatDamageMultiplier_name: Fatigue Damage Multiplier
+disableSpells_name: Disable negative Spells
+disableAggro_description: |
+  Includes spells having Destruction and Mysticism effects.
+
+  Might affect performance.
+
+followersToPlayer_groupName: Followers -> Player Attacks

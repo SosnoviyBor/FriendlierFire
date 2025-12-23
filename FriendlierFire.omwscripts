@@ -1,0 +1,5 @@
+PLAYER: scripts/FriendlierFire/player.lua
+NPC, CREATURE: scripts/FriendlierFire/non-player.lua
+
+MENU: scripts/FriendlierFire/settingsMenu.lua
+GLOBAL: scripts/FriendlierFire/settingsGlobal.lua
