@@ -1,18 +1,18 @@
 # Friendlier Fire (OpenMW)
 
-Rebeling followers begone!
+Rebelling followers begone!
 
 *For MWSE alternative check out [No More Friendly Fire](https://www.nexusmods.com/morrowind/mods/48801) by Celediel.*
 
 ## What It Does
 
-- Prevents followers from aggroing at you.
-- Reduces physical player-to-follower damage and vice versa (configurable).
+- Prevents followers from aggroing at you
+- Reduces physical player-to-follower damage and vice versa (configurable)
 
 ## What It Doesn't (yet)
 
-- Affect spells/enchantments.
-- Make followers immortal.
+- Affect spells/enchantments
+- Make followers immortal
 
 ## Consider also
 
