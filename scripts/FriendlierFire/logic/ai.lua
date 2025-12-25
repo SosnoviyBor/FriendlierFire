@@ -3,6 +3,10 @@ local self = require('openmw.self')
 local types = require('openmw.types')
 
 function FollowsPlayer(player)
+    if self.type == types.Player then
+        return false
+    end
+
     local followedActor
     I.AI.forEachPackage(function (pkg)
         if pkg.type == "Follow" then
@@ -11,13 +15,16 @@ function FollowsPlayer(player)
         end
     end)
 
+    local followsPlayer = followedActor == player
     local isSummon = string.find(self.recordId, "_summon$")
         or string.find(self.recordId, "_summ$")
-    if isSummon then
-        return StopAttackingLeader({ target = followedActor })
+
+    local isFollowersSummon = false
+    if not followsPlayer and isSummon then
+        isFollowersSummon = FollowsPlayer(followedActor)
     end
 
-    return followedActor == player
+    return followsPlayer or isFollowersSummon
 end
 
 local function AttackPlayerFilter(pkg)

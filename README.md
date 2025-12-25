@@ -6,7 +6,10 @@ Rebelling followers begone!
 
 ## What It Does
 
-- Prevents followers from aggroing at you
+- Prevents any followers from aggroing at you. Includes:
+  - NPC/creature followers
+  - Player's summons
+  - Follower's summons
 - Reduces physical player-to-follower damage and vice versa (configurable)
 
 ## What It Doesn't (yet)
