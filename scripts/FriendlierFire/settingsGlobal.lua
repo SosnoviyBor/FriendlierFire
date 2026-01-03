@@ -11,6 +11,7 @@ I.Settings.registerGroup {
         {
             key = 'disableAggro',
             name = 'disableAggro_name',
+            description = "disableAggro_description",
             renderer = 'checkbox',
             default = true,
         },
@@ -41,7 +42,6 @@ I.Settings.registerGroup {
         -- {
         --     key = 'disableSpells',
         --     name = 'disableSpells_name',
-        --     description = 'disableSpells_description',
         --     renderer = 'checkbox',
         --     default = true,
         -- },
@@ -83,27 +83,26 @@ I.Settings.registerGroup {
         -- {
         --     key = 'disableSpells',
         --     name = 'disableSpells_name',
-        --     description = 'disableSpells_description',
         --     renderer = 'checkbox',
         --     default = true,
         -- },
     }
 }
 
--- I.Settings.registerGroup {
---     key = 'SettingsFriendlierFire_other',
---     page = 'FriendlierFire',
---     l10n = 'FriendlierFire',
---     name = 'other_groupName',
---     permanentStorage = true,
---     order = 3,
---     settings = {
---         {
---             key = 'immortalFollowers',
---             name = 'immortalFollowers_name',
---             description = 'immortalFollowers_description',
---             renderer = 'checkbox',
---             default = true,
---         },
---     }
--- }
+I.Settings.registerGroup {
+    key = 'SettingsFriendlierFire_other',
+    page = 'FriendlierFire',
+    l10n = 'FriendlierFire',
+    name = 'other_groupName',
+    permanentStorage = true,
+    order = 3,
+    settings = {
+        {
+            key = 'disableAggro',
+            name = 'disableAggro_name',
+            description = "disableAggro_description",
+            renderer = 'checkbox',
+            default = true,
+        },
+    }
+}

@@ -1,6 +1,9 @@
 local I = require('openmw.interfaces')
 local self = require("openmw.self")
 local types = require('openmw.types')
+local storage = require('openmw.storage')
+
+local sectioOther = storage.globalSection('SettingsFriendlierFire_other')
 
 local function AttackPlayerFilter(pkg)
     return not (pkg.type == "Combat" and pkg.target.type == types.Player)
@@ -24,6 +27,7 @@ function StopAttackingOtherFollower(data)
 end
 
 function TargetChanged(data)
+    if not sectioOther:get("disableAggro") then return end
     stopAttackingPlayer(data)
-    data.target:sendEvent("CheckTargetsLeader", { sender = self })
+    data.target:sendEvent("CheckIfTargetFollowsPlayer", { sender = self })
 end
