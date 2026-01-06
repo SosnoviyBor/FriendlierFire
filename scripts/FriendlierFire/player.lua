@@ -2,28 +2,39 @@ local storage = require('openmw.storage')
 local self = require("openmw.self")
 local I = require("openmw.interfaces")
 
-require("scripts.FriendlierFire.actorCommon")
+require("scripts.FriendlierFire.logic.combat")
+require("scripts.FriendlierFire.logic.spells")
 require("scripts.FriendlierFire.utils.dependencies")
 
 CheckDependencies(self, {
     ["FollowerDetectionUtil.omwscripts"] = I.FollowerDetectionUtil == nil
 })
+I.Combat.addOnHitHandler(AttackHandler)
 
-local sectionPtF = storage.globalSection('SettingsFriendlierFire_playerToFollowers')
+local sectionOther = storage.globalSection('SettingsFriendlierFire_other')
+local hasFollowers = next(I.FollowerDetectionUtil.getFollowerList()) ~= nil
 
 local function onUpdate()
-    if sectionPtF:get("disableSpells") then SpellUpdate() end
+    if sectionOther:get("disableSpells") and hasFollowers then
+        local newSpells = UpdateActiveSpells()
+        RemoveFriendlyHarmfulSpells(newSpells)
+    end
 end
 
 local function localEnemyTargetChanged(data)
     data.actor:sendEvent("FriendlyFire_TargetChanged", { target = self })
 end
 
+local function updateFollowerStatus(data)
+    hasFollowers = next(data.followers) ~= nil
+end
+
 return {
-    -- engineHandlers = {
-    --     onUpdate = onUpdate,
-    -- },
+    engineHandlers = {
+        onUpdate = onUpdate,
+    },
     eventHandlers = {
-        OMWMusicCombatTargetsChanged = localEnemyTargetChanged
+        OMWMusicCombatTargetsChanged = localEnemyTargetChanged,
+        FDU_UpdateFollowerList = updateFollowerStatus,
     }
 }

@@ -9,13 +9,6 @@ I.Settings.registerGroup {
     order = 1,
     settings = {
         {
-            key = 'disableAggro',
-            name = 'disableAggro_name',
-            description = "disableAggro_description",
-            renderer = 'checkbox',
-            default = true,
-        },
-        {
             key = 'hpDamageMultiplier',
             name = 'hpDamageMultiplier_name',
             renderer = 'number',
@@ -39,12 +32,6 @@ I.Settings.registerGroup {
             default = .33,
             min = 0,
         },
-        -- {
-        --     key = 'disableSpells',
-        --     name = 'disableSpells_name',
-        --     renderer = 'checkbox',
-        --     default = true,
-        -- },
     }
 }
 
@@ -80,12 +67,6 @@ I.Settings.registerGroup {
             default = .33,
             min = 0,
         },
-        -- {
-        --     key = 'disableSpells',
-        --     name = 'disableSpells_name',
-        --     renderer = 'checkbox',
-        --     default = true,
-        -- },
     }
 }
 
@@ -101,6 +82,12 @@ I.Settings.registerGroup {
             key = 'disableAggro',
             name = 'disableAggro_name',
             description = "disableAggro_description",
+            renderer = 'checkbox',
+            default = true,
+        },
+        {
+            key = 'disableSpells',
+            name = 'disableSpells_name',
             renderer = 'checkbox',
             default = true,
         },

@@ -34,3 +34,4 @@ Rebelling followers begone!
 **Sosnoviy Bor** - Author  
 **S3ctor** - Valuable knowledge  
 **Glittergear and the Guarlings** - Creating [Caswyn - A Nightmare's Favor](https://www.nexusmods.com/morrowind/mods/55505) which inspired me in the first place. Good mod, give it a shot
+**Itermerel** - Being a good punching bag
