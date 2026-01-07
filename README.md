@@ -10,18 +10,20 @@ Rebelling followers begone!
   - NPC/creature followers
   - Player's summons
   - Follower's summons
-- Stops followers from fighting each other [NEEDS TESTING]
+- Stops followers from fighting each other
+- Prevents you and your followers from harming each other with spells
 - Reduces physical player-to-follower damage and vice versa (configurable)
 
-## What It Doesn't (yet)
+## Shortcomings
 
-- Affect spells/enchantments
+- While the spells are disabled as soon as they are detected, they still manage to inflict a sliver of damage and trigger a red vignette. They might get you killed if you're at 1 HP, but otherwise it's barely noticeable.
+- When followers try to aggro on you, they still shout their combat line.
 
 ## Requirements
 
 **Load dependencies before this mod!**
 
-- Follower Detection Util (link will be added later)
+- Follower Detection Util
 
 ## Consider also
 
@@ -33,5 +35,5 @@ Rebelling followers begone!
 
 **Sosnoviy Bor** - Author  
 **S3ctor** - Valuable knowledge  
-**Glittergear and the Guarlings** - Creating [Caswyn - A Nightmare's Favor](https://www.nexusmods.com/morrowind/mods/55505) which inspired me in the first place. Good mod, give it a shot
+**Glittergear and the Guarlings** - Creating [Caswyn - A Nightmare's Favor](https://www.nexusmods.com/morrowind/mods/55505) which inspired me in the first place. Good mod, give it a shot  
 **Itermerel** - Being a good punching bag
