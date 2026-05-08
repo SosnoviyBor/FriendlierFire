@@ -1,4 +1,5 @@
-local selfType = require('openmw.self').type
+---@diagnostic disable: missing-parameter
+local self = require('openmw.self')
 local types = require('openmw.types')
 local storage = require('openmw.storage')
 local I = require('openmw.interfaces')
@@ -29,9 +30,7 @@ local selfToAttackFilter = {
 }
 
 function AttackHandler(attack)
-    if not attack.successful or not attack.attacker then return end
-
-    local attackFilter = selfToAttackFilter[selfType]
+    local attackFilter = selfToAttackFilter[self.type]
     if attackFilter(attack) then return end
 
     if settings:get("damageMult") < 0 then return false end

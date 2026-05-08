@@ -1,5 +1,12 @@
 # Friendlier Fire (OpenMW)
 
+## 2.4
+
+- Removed Soultrap filtering setting
+- Added setting to disable protection for summons
+- Added setting to disable all follower's protection if they have any command effect on them
+- Updated dependency checker
+
 ## 2.3
 
 ### Changes

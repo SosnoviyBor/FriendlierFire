@@ -2,17 +2,18 @@ local storage = require('openmw.storage')
 local self = require("openmw.self")
 local I = require("openmw.interfaces")
 
+local deps = require("scripts.FriendlierFire.utils.dependencies")
+deps.checkAll("Friendlier Fire", { {
+    plugin = "FollowerDetectionUtil.omwscripts",
+    interface = I.FollowerDetectionUtil,
+    minVersion = 1.11,
+    curVersion = I.FollowerDetectionUtil
+        and I.FollowerDetectionUtil.version
+        or -1
+} })
+
 require("scripts.FriendlierFire.logic.combat")
 require("scripts.FriendlierFire.logic.spells")
-require("scripts.FriendlierFire.utils.dependencies")
-
-CheckDependency(
-    self,
-    "Friendly Fire",
-    "FollowerDetectionUtil.omwscripts",
-    I.FollowerDetectionUtil,
-    1.11,
-    I.FollowerDetectionUtil and I.FollowerDetectionUtil.version or -1)
 
 I.Combat.addOnHitHandler(AttackHandler)
 
@@ -20,7 +21,7 @@ local settings = storage.globalSection('SettingsFriendlierFire_settings')
 local hasFollowers = false
 
 local function onUpdate()
-    if settings:get("disableSpells") and hasFollowers then
+    if hasFollowers and settings:get("disableSpells") then
         local newSpells = UpdateActiveSpells()
         RemoveFriendlyHarmfulSpells(newSpells)
     end

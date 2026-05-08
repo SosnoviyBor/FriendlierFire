@@ -2,9 +2,8 @@ local types = require("openmw.types")
 local self = require("openmw.self")
 local I = require("openmw.interfaces")
 local core = require("openmw.core")
-local storage = require("openmw.storage")
 
-local settings = storage.globalSection("SettingsFriendlierFire_settings")
+local activeSpells = self.type.activeSpells(self)
 
 local function isFriendlyFire(spell, followers)
     if not spell.caster then return false end
@@ -24,12 +23,8 @@ local function isFriendlyFire(spell, followers)
 end
 
 local function spellIsHarmful(spell)
-    local allowSoultrap = settings:get("allowSoultrap")
-
     for _, effect in pairs(spell.effects) do
-        if core.magic.effects.records[effect.id].harmful
-            and not (effect.id == "soultrap" and allowSoultrap)
-        then
+        if core.magic.effects.records[effect.id].harmful then
             return true
         end
     end
@@ -37,11 +32,10 @@ local function spellIsHarmful(spell)
 end
 
 function UpdateActiveSpells()
-    local currActiveSpells = self.type.activeSpells(self)
     local followers = I.FollowerDetectionUtil.getFollowerList()
     local newSpells = {}
 
-    for _, spell in pairs(currActiveSpells) do
+    for _, spell in pairs(activeSpells) do
         if spell.temporary
             and isFriendlyFire(spell, followers)
             and spellIsHarmful(spell)
@@ -56,7 +50,6 @@ end
 function RemoveFriendlyHarmfulSpells(newSpells)
     if not next(newSpells) then return end
 
-    local activeSpells = self.type.activeSpells(self)
     for _, spell in ipairs(newSpells) do
         activeSpells:remove(spell.activeSpellId)
     end
