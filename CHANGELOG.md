@@ -1,5 +1,10 @@
 # Friendlier Fire (OpenMW)
 
+## 2.5
+
+- Added actor blacklist by mwscripts
+- Blacklisted heartfanghuntScript for [spoilers] reason
+
 ## 2.4
 
 - Removed Soultrap filtering setting

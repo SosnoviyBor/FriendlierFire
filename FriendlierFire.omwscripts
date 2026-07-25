@@ -1,5 +1,7 @@
-PLAYER: scripts/FriendlierFire/player.lua
-NPC, CREATURE: scripts/FriendlierFire/actor.lua
+MENU: scripts/FriendlierFire/utils/textListRenderer.lua
 
 MENU: scripts/FriendlierFire/settingsMenu.lua
 GLOBAL: scripts/FriendlierFire/settingsGlobal.lua
+
+PLAYER: scripts/FriendlierFire/player.lua
+NPC, CREATURE: scripts/FriendlierFire/actor.lua

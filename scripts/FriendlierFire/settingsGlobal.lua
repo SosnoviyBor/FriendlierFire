@@ -43,5 +43,14 @@ I.Settings.registerGroup {
             renderer = 'checkbox',
             default = true,
         },
+        {
+            key = 'blacklistedScripts',
+            name = 'blacklistedScripts_name',
+            description = 'blacklistedScripts_desc',
+            renderer = 'TextList',
+            default = {
+                "heartfanghuntscript",
+            },
+        },
     }
 }

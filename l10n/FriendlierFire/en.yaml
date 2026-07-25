@@ -16,3 +16,8 @@ commandDisablesProtection_desc: |
   Prevents damage reduction and harmful spell cleansing on follower.
 
   Any magnitude, any command spell.
+blacklistedScripts_name: Blacklisted Scripts
+blacklistedScripts_desc: |
+  Actors with these scripts won't be affected by this mod.
+
+  Changes on already loaded actors take effect only after a script reload.

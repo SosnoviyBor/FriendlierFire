@@ -11,6 +11,16 @@ if isSummon and not settings:get("protectSummons") then
     return
 end
 
+-- blacklisted scripts check
+local mwscript = self.type.records[self.recordId].mwscript
+if mwscript then
+    for _, blacklistedScript in ipairs(settings:get("blacklistedScripts")) do
+        if mwscript == blacklistedScript then
+            return
+        end
+    end
+end
+
 require("scripts.FriendlierFire.logic.combat")
 require("scripts.FriendlierFire.logic.spells")
 require("scripts.FriendlierFire.logic.ai")
